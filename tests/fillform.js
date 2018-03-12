@@ -58,7 +58,6 @@ module.exports = {
 		element(by.model('vm.can_input')).click();
 		element(by.model('vm.can_process')).click();
 		selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
-		element(by.model('vm.dns_prefix')).sendKeys('broadcasterqa');
 		element(by.buttonText('Continue')).click().then(function() {
 			browser.sleep(5000);
 			element(by.model('vm.auth_mode')).click();
