@@ -55,7 +55,6 @@ module.exports = {
 		element(by.model('vm.name')).sendKeys('broadcasterqa');
 		let selectDropDownZen = new SelectDropDownZen();
 		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
-		vm.can_input
 		element(by.model('vm.can_input')).click();
 		element(by.model('vm.can_process')).click();
 		selectDropDownZen.checkDropDown('manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
