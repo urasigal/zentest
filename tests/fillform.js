@@ -56,25 +56,43 @@ module.exports = {
 		let selectDropDownZen = new SelectDropDownZen();
 		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
 		element(by.model('vm.can_input')).click().then(function() {
-			element(by.model('vm.can_process')).click().then(function() {
-				//selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
-				element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]')).click().then(function() {
-					element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click().then(function() {
-						browser.sleep(10000).then(function() {
-							element(by.buttonText('Continue')).click().then(function() {
-								browser.sleep(5000).then(function() {
-									element(by.model('vm.auth_mode')).click();
-									element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
-									element(by.model('vm.ffa_inputs')).click();
-									element(by.model('vm.ffa_outputs')).click();
-									element(by.buttonText('Save')).click();
-								});
-							});
-						});
-					});
-				});
-			});
-		});
+			return element(by.model('vm.can_process')).click();}).tnen(function(){
+				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]')).click();
+			}).then(function(){
+				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click();
+			}).then(function(){
+				return element(by.buttonText('Continue')).click();
+			}).then(function(){
+				return element(by.model('vm.auth_mode')).click();
+			}).then(function(){
+				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
+			}).then(function(){
+				return element(by.model('vm.ffa_inputs')).click();
+			}).then(function(){
+				return element(by.model('vm.ffa_outputs')).click();
+			}).then(function(
+				return element(by.buttonText('Save')).click();
+			));
+//		element(by.model('vm.can_input')).click().then(function() {
+//			element(by.model('vm.can_process')).click().then(function() {
+//				//selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
+//				element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]')).click().then(function() {
+//					element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click().then(function() {
+//						browser.sleep(10000).then(function() {
+//							element(by.buttonText('Continue')).click().then(function() {
+//								browser.sleep(5000).then(function() {
+//									element(by.model('vm.auth_mode')).click();
+//									element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
+//									element(by.model('vm.ffa_inputs')).click();
+//									element(by.model('vm.ffa_outputs')).click();
+//									element(by.buttonText('Save')).click();
+//								});
+//							});
+//						});
+//					});
+//				});
+//			});
+//		});
   	}
  };
 
