@@ -6,5 +6,11 @@ exports.config = {
   },
   onPrepare: function(){
 			browser.manage().window().maximize();
-		}
+		},
+	jasmineNodeOpts: 
+	{
+	  showColors: true,
+	  includeStackTrace: true,
+	  defaultTimeoutInterval: 14400000
+	}
 };
