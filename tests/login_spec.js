@@ -21,7 +21,10 @@ describe('WEB UI login tests', function() {
 	  addFeederDriver.addFeederTestDriver().then(function(res){
 		  console.log('PASSED');
 		  expect(res).toBeTruthy();
-	  });
+	  }, function(err)(
+		  console.log('PASSED');
+		  expect(res).toBeTruthy();
+		));
 	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
 	});

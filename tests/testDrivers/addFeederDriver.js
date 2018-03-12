@@ -19,6 +19,9 @@ module.exports = {
 				fillForm.parseFeederTable('feederqa').then(function(res){
 					console.log('The res is ' + res);
 					resolve(res);
+				},function(res){
+					console.log('The res is ' + res);
+					reject(res);
 				});
 			});
 		});
