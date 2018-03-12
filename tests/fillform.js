@@ -59,7 +59,7 @@ module.exports = {
 		element(by.model('vm.can_process')).click();
 		selectDropDownZen.checkDropDown('manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
 		element(by.buttonText('Continue')).click().then(function() {
-			element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select')).click();
+			element(by.model('vm.auth_mode')).click();
 			element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
 			element(by.model('vm.ffa_inputs')).click();
 			element(by.model('vm.ffa_outputs')).click();
