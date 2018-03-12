@@ -10,6 +10,7 @@ module.exports = {
 		fillForm.fillNewFeederFormAndSave();
 		/////////////////////////////////////////////////////////
 		
+		///////////////////////////////////////////////////////////
 		var feederPannel = locations.feederDashboardSelector();
 		browser.sleep(5000).then(function(){
 			feederPannel.click().then(function(){

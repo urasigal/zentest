@@ -8,7 +8,7 @@ module.exports = {
  	// Fill feeder form.
  fillNewFeederFormAndSave: function(){
 	// Open feeder form.
-        element(by.buttonText('Add')).click();
+    element(by.buttonText('Add')).click();
 	// Provide feeder name - used by ZEN.
 	element(by.model('vm.name')).sendKeys('feederqa');
 	//  Select available access tags
@@ -34,15 +34,15 @@ module.exports = {
             for(let p = 0; p < arr[k].length; p++)
 			{
 				console.log('Res length in end' + arr[k].length);
-                arr[k][p].then(function(txt){console.log('In the end ' + txt);
+                arr[k][p].then(function(txt){console.log('In the end *' + txt + '*');
                 	if(finder === txt)
                 		return true;
                 });
 			}
         }
 		browser.sleep(4000);
-	    });
+	  });
 		return false;
 	}
-  };
+ };
 
