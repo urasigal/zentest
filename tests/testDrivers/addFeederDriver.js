@@ -19,8 +19,7 @@ module.exports = {
 				resolve( fillForm.parseFeederTable('feederqa'));
 	        	});
 		});
-		browser.sleep(3000);
-		reject( false);
+		browser.sleep(6000).then(function(){reject( false);});
 	});
 	}
 };
