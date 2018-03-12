@@ -16,10 +16,14 @@ module.exports = {
 		
 		browser.sleep(5000).then(function(){
 			feederPannel.click().then(function(){
-				resolve( fillForm.parseFeederTable('feederqa'));
-	        	});
+				fillForm.parseFeederTable('feederqa').then(function(res){
+					resolve(res);
+				});
+			});
 		});
-		browser.sleep(6000).then(function(){reject( false);});
+		browser.sleep(6000).then(function(){
+			reject(false);
+			});
 	});
 	}
 };

@@ -36,7 +36,7 @@ module.exports = {
                 	if(finder === txt)
                 	{
                 		console.log('find the match');
-                		resolve( true);
+                		resolve(true);
                 	}
                 });
 			}
