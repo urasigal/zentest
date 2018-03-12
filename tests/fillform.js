@@ -43,7 +43,7 @@ module.exports = {
 		browser.sleep(4000);
 	  });
 	 reject( false);
-	}
+	});
  }
  };
 
