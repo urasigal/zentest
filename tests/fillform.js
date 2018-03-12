@@ -60,7 +60,7 @@ module.exports = {
 		selectDropDownZen.checkDropDown('manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
 		element(by.model('vm.dns_prefix')).sendKeys('broadcasterqa');
 		element(by.buttonText('Continue')).click().then(function() {
-			browser(sleep(5000));
+			browser.sleep(5000));
 			element(by.model('vm.auth_mode')).click();
 			element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
 			element(by.model('vm.ffa_inputs')).click();
