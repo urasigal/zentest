@@ -1,7 +1,7 @@
 // imports
 const pathes =  require('./xpathes.js');
 const locations = require('./selecfunc.js');
-const fillForm = require('./fillform.js');
+const addFeederDriver = require('./testDrivers/addFeederDriver.js');
 
 describe('WEB UI login tests', function() {
 
@@ -15,19 +15,20 @@ describe('WEB UI login tests', function() {
   });
 
   it('Add feeder', function(){
-	var feederPannel = locations.feederDashboardSelector();
-	feederPannel.click();
-	fillForm.fillNewFeederFormAndSave();
+	//var feederPannel = locations.feederDashboardSelector();
+	//feederPannel.click();
+	//fillForm.fillNewFeederFormAndSave();
+	  expect(addFeederDriver.addFeederTestDriver()).toBeTruthy();
   });
 
-  it('Parse table', function(){
-	var feederPannel = locations.feederDashboardSelector();
-	browser.sleep(5000).then(function(){
-		feederPannel.click().then(function(){
-                fillForm.parseFeederTable();
-        	});
-	});
-	browser.sleep(3000);
-   });
+//  it('Parse table', function(){
+//	var feederPannel = locations.feederDashboardSelector();
+//	browser.sleep(5000).then(function(){
+//		feederPannel.click().then(function(){
+//                fillForm.parseFeederTable();
+//        	});
+//	});
+//	browser.sleep(3000);
+//   });
 });
 
