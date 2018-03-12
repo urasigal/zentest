@@ -56,21 +56,22 @@ module.exports = {
 		let selectDropDownZen = new SelectDropDownZen();
 		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
 		element(by.model('vm.can_input')).click().then(function() {
-			return element(by.model('vm.can_process')).click();}).tnen(function(){
+			    return element(by.model('vm.can_process')).click();
+			}).tnen(function(el){
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.buttonText('Continue')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.model('vm.auth_mode')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.model('vm.ffa_inputs')).click();
-			}).then(function(){
+			}).then(function(el){
 				return element(by.model('vm.ffa_outputs')).click();
-			}).then(function(){
+			}).then(function(el){
 				 element(by.buttonText('Save')).click();
 			});
 //		element(by.model('vm.can_input')).click().then(function() {
