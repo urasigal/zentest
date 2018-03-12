@@ -19,6 +19,7 @@ describe('WEB UI login tests', function() {
 	//feederPannel.click();
 	//fillForm.fillNewFeederFormAndSave();
 	  addFeederDriver.addFeederTestDriver().then(function(res){
+		  console.log('PASSED');
 		  expect(res).toBeTruthy();
 	  });
   });
