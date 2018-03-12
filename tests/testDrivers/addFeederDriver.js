@@ -21,6 +21,6 @@ module.exports = {
 		});
 		browser.sleep(3000);
 		reject( false);
-	}
+	});
 	}
 };
