@@ -17,6 +17,7 @@ module.exports = {
 		browser.sleep(5000).then(function(){
 			feederPannel.click().then(function(){
 				fillForm.parseFeederTable('feederqa').then(function(res){
+					console.log('The res is ' + res);
 					resolve(res);
 				});
 			});
