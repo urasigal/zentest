@@ -70,9 +70,9 @@ module.exports = {
 				return element(by.model('vm.ffa_inputs')).click();
 			}).then(function(){
 				return element(by.model('vm.ffa_outputs')).click();
-			}).then(function(
-				return element(by.buttonText('Save')).click();
-			));
+			}).then(function{
+				 element(by.buttonText('Save')).click();
+			});
 //		element(by.model('vm.can_input')).click().then(function() {
 //			element(by.model('vm.can_process')).click().then(function() {
 //				//selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
