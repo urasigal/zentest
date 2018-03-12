@@ -26,14 +26,5 @@ describe('WEB UI login tests', function() {
 	  console.log('PASSED AFTER');
   });
 
-//  it('Parse table', function(){
-//	var feederPannel = locations.feederDashboardSelector();
-//	browser.sleep(5000).then(function(){
-//		feederPannel.click().then(function(){
-//                fillForm.parseFeederTable();
-//        	});
-//	});
-//	browser.sleep(3000);
-//   });
 });
 

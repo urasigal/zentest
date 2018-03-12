@@ -27,22 +27,23 @@ module.exports = {
 	let tableParser = new TableParser();
 	let res = tableParser.parseTableAndFillArray(xpathes.feedersTableXpath);
 	 return  new Promise(function(resolve, reject) {  res.then(function(arr){
-		console.log('Res length ' + arr.length);
 		for(let k = 0; k < arr.length; k ++)
         {
 			
             for(let p = 0; p < arr[k].length; p++)
 			{
-				console.log('Res length in end' + arr[k].length);
-                arr[k][p].then(function(txt){console.log('In the end *' + txt + '*');
+                arr[k][p].then(function(txt){
                 	if(finder === txt)
+                	{
+                		console.log('find the match');
                 		resolve( true);
+                	}
                 });
 			}
         }
 		browser.sleep(4000);
 	  });
-	 reject( false);
+	 reject(false);
 	});
  }
  };
