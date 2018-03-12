@@ -57,7 +57,7 @@ module.exports = {
 		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
 		element(by.model('vm.can_input')).click().then(function() {
 			element(by.model('vm.can_process')).click().then(function() {
-				selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
+				//selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
 //				browser.sleep(10000).then(function() {
 //					element(by.buttonText('Continue')).click().then(function() {
 //						browser.sleep(5000).then(function() {
