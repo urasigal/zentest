@@ -23,6 +23,7 @@ describe('WEB UI login tests', function() {
 		  expect(res).toBeTruthy();
 	  });
 	  browser.sleep(10000);
+	  console.log('PASSED AFTER');
   });
 
 //  it('Parse table', function(){
