@@ -12,12 +12,15 @@ module.exports = {
 		
 		///////////////////////////////////////////////////////////
 		var feederPannel = locations.feederDashboardSelector();
+		 return  new Promise(function(resolve, reject) {
+		
 		browser.sleep(5000).then(function(){
 			feederPannel.click().then(function(){
-	                return fillForm.parseFeederTable('feederqa');
+				resolve( fillForm.parseFeederTable('feederqa'));
 	        	});
 		});
 		browser.sleep(3000);
-		return false;
+		reject( false);
+	}
 	}
 };

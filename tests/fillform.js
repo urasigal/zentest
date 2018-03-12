@@ -26,7 +26,7 @@ module.exports = {
  parseFeederTable: function(finder){
 	let tableParser = new TableParser();
 	let res = tableParser.parseTableAndFillArray(xpathes.feedersTableXpath);
-	res.then(function(arr){
+	 return  new Promise(function(resolve, reject) {  res.then(function(arr){
 		console.log('Res length ' + arr.length);
 		for(let k = 0; k < arr.length; k ++)
         {
@@ -36,13 +36,14 @@ module.exports = {
 				console.log('Res length in end' + arr[k].length);
                 arr[k][p].then(function(txt){console.log('In the end *' + txt + '*');
                 	if(finder === txt)
-                		return true;
+                		resolve( true);
                 });
 			}
         }
 		browser.sleep(4000);
 	  });
-		return false;
+	 reject( false);
 	}
+ }
  };
 

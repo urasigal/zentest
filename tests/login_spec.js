@@ -18,7 +18,9 @@ describe('WEB UI login tests', function() {
 	//var feederPannel = locations.feederDashboardSelector();
 	//feederPannel.click();
 	//fillForm.fillNewFeederFormAndSave();
-	  expect(addFeederDriver.addFeederTestDriver()).toBeTruthy();
+	  addFeederDriver.addFeederTestDriver().then(function(res){
+		  expect(res).toBeTruthy();
+	  });
   });
 
 //  it('Parse table', function(){
