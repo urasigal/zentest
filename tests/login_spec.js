@@ -23,7 +23,6 @@ describe('WEB UI login tests', function() {
 		  expect(res).toBeTruthy();
 	  });
 	  browser.sleep(10000);
-	  });
   });
 
 //  it('Parse table', function(){
