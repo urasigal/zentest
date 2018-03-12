@@ -70,7 +70,7 @@ module.exports = {
 				return element(by.model('vm.ffa_inputs')).click();
 			}).then(function(){
 				return element(by.model('vm.ffa_outputs')).click();
-			}).then(function{
+			}).then(function(){
 				 element(by.buttonText('Save')).click();
 			});
 //		element(by.model('vm.can_input')).click().then(function() {
