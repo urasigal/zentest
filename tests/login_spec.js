@@ -24,7 +24,7 @@ describe('WEB UI login tests', function() {
 	  }, function(err){
 		  expect(err).toBeTruthy();
 	  });
-	  browser.sleep(15000).then(function() {
+	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
 	});
 	  
