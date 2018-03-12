@@ -58,17 +58,17 @@ module.exports = {
 		element(by.model('vm.can_input')).click().then(function() {
 			element(by.model('vm.can_process')).click().then(function() {
 				selectDropDownZen.checkDropDown('Manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
-				browser.sleep(10000).then(function() {
-					element(by.buttonText('Continue')).click().then(function() {
-						browser.sleep(5000).then(function() {
-							element(by.model('vm.auth_mode')).click();
-							element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
-							element(by.model('vm.ffa_inputs')).click();
-							element(by.model('vm.ffa_outputs')).click();
-							element(by.buttonText('Save')).click();
-						});
-					});
-				});
+//				browser.sleep(10000).then(function() {
+//					element(by.buttonText('Continue')).click().then(function() {
+//						browser.sleep(5000).then(function() {
+//							element(by.model('vm.auth_mode')).click();
+//							element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
+//							element(by.model('vm.ffa_inputs')).click();
+//							element(by.model('vm.ffa_outputs')).click();
+//							element(by.buttonText('Save')).click();
+//						});
+//					});
+//				});
 				
 			});
 		});
