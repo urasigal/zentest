@@ -22,7 +22,7 @@ describe('WEB UI login tests', function() {
 		  console.log('PASSED');
 		  expect(res).toBeTruthy();
 	  });
-	  browser.sleep(10000).then(function() {
+	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
 	});
 	  
