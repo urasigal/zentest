@@ -22,6 +22,8 @@ describe('WEB UI login tests', function() {
 		  console.log('PASSED');
 		  expect(res).toBeTruthy();
 	  });
+	  browser.sleep(10000);
+	  });
   });
 
 //  it('Parse table', function(){
