@@ -23,7 +23,8 @@ module.exports = {
 	browser.sleep(2000).then(function(){element(by.buttonText('Save')).click();
 		});
       },
- parseFeederTable: function(finder){
+      
+  parseFeederTable: function(finder){
 	let tableParser = new TableParser();
 	let res = tableParser.parseTableAndFillArray(xpathes.feedersTableXpath);
 	 return new Promise(function(resolve, reject) {  res.then(function(arr){
@@ -46,6 +47,24 @@ module.exports = {
 		});
 	  });
 	});
- }
+  },
+  
+  fillNewBroadcasterFormAndSave: function() {
+		// Open feeder form.
+		element(by.buttonText('Add')).click();
+		element(by.model('vm.name')).sendKeys('broadcasterqa');
+		let selectDropDownZen = new SelectDropDownZen();
+		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
+		vm.can_input
+		element(by.model('vm.can_input')).click();
+		element(by.model('vm.can_process')).click();
+		selectDropDownZen.checkDropDown('manual', xpathes.broadcasterScalingTypeOuter, xpathes.broadcasterScalingTypeInner);
+		element(by.buttonText('Continue')).click();
+		element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select')).click();
+		element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
+		element(by.model('vm.ffa_inputs')).click();
+		element(by.model('vm.ffa_outputs')).click();
+		element(by.buttonText('Save')).click();
+  	}
  };
 

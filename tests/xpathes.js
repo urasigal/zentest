@@ -6,5 +6,10 @@ module.exports = {
 	feederAccessOuterContainer:'/html/body/div[1]/div/div/form/div[1]/div[2]/resource-tag-select/div/div[1]',
 	feederSSHInnerDropDown: '/html/body/div[1]/div/div/form/div[1]/div[5]/ssh-key-select/div/div[2]/div',
 	feederSSHOuterDropDown: '/html/body/div[1]/div/div/form/div[1]/div[5]/ssh-key-select/div/div[1]',
-	feedersTableXpath: '/html/body/div[1]/div/div/div[3]/div[2]/div/div/div[1]/div/div[2]/div/table/tbody'  
+	feedersTableXpath: '/html/body/div[1]/div/div/div[3]/div[2]/div/div/div[1]/div/div[2]/div/table/tbody',  
+	broadcasterXpath: '//*[@id="main-side-bar"]/ul/li[4]/a',
+	broadcasterAccessOuterContainer: '/html/body/div[1]/div/div/form/div[1]/div/div[2]/resource-tag-select/div/div[1]',
+	broadcasterAccessTag: '/html/body/div[1]/div/div/form/div[1]/div/div[2]/resource-tag-select/div/div[2]/div',
+    broadcasterScalingTypeOuter: '/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]',
+    broadcasterScalingTypeInner: '/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div'
 };

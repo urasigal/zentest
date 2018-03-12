@@ -2,6 +2,7 @@
 const pathes =  require('./xpathes.js');
 const locations = require('./selecfunc.js');
 const addFeederDriver = require('./testDrivers/addFeederDriver.js');
+const addBroadcasterTestDriver = require('./testDrivers/addBroadcasterTestDriver.js');
 
 describe('WEB UI login tests', function() {
 
@@ -19,15 +20,19 @@ describe('WEB UI login tests', function() {
 	//feederPannel.click();
 	//fillForm.fillNewFeederFormAndSave();
 	  addFeederDriver.addFeederTestDriver().then(function(res){
-		  console.log('PASSED');
 		  expect(res).toBeTruthy();
 	  }, function(err){
-		  console.log('PASSED');
 		  expect(err).toBeTruthy();
 	  });
 	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
 	});
+	  
+  });
+  
+  it('Add broadcaster', function() {
+	
+	  addBroadcasterTestDriver.addBroadcaster(); 
 	  
   });
 
