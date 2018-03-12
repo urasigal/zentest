@@ -26,7 +26,7 @@ module.exports = {
  parseFeederTable: function(finder){
 	let tableParser = new TableParser();
 	let res = tableParser.parseTableAndFillArray(xpathes.feedersTableXpath);
-	 return  new Promise(function(resolve, reject) {  res.then(function(arr){
+	 return new Promise(function(resolve, reject) {  res.then(function(arr){
 		for(let k = 0; k < arr.length; k ++)
         {
 			
@@ -41,9 +41,10 @@ module.exports = {
                 });
 			}
         }
-		browser.sleep(4000);
+		browser.sleep(4000).then(function() {
+			reject(false);
+		});
 	  });
-	 reject(false);
 	});
  }
  };
