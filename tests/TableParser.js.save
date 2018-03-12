@@ -1,0 +1,31 @@
+"use strict";
+
+module.exports = class TableParser {
+
+  constructor() {}
+
+  parseTableAndFillArray(tableLocationXpath) {
+	  var tableCellsArray = [];
+	  // Find table element by its xpath.
+	  var table = element(by.xpath(tableLocationXpath));
+		
+	  // Retrive all rows from table element.
+	  var tableRows = table.all(by.tagName('tr'));
+	console.log('Row numbers is ' + tableRows.length);
+	  // Walk through table's rows
+	  for (var i = 0; i < tableRows.length; i++) {
+		tableCellsArray.push(tableRows.all(by.tagName('td')));
+      }
+	  var globLength = tableCellsArray.length;
+	  for (var i = 0; i < globLength; i++) {
+		let cellArrTmp = tableCellsArray[i];
+		let innerLength = cellArrTmp.length;
+		for (var j = 0; j < innerLength; j++) {
+			let cell = cellArrTmp[j];
+			cell.getText().then(function(cntnt){
+					console.log('$' + cntnt);
+				});
+		}
+      }
+	}
+}
