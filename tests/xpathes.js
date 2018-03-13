@@ -11,5 +11,6 @@ module.exports = {
 	broadcasterAccessOuterContainer: '/html/body/div[1]/div/div/form/div[1]/div/div[2]/resource-tag-select/div/div[1]',
 	broadcasterAccessTag: '/html/body/div[1]/div/div/form/div[1]/div/div[2]/resource-tag-select/div/div[2]/div',
     broadcasterScalingTypeOuter: '/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]',
-    broadcasterScalingTypeInner: '/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div'
+    broadcasterScalingTypeInner: '/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div',
+    clusterTableXpath: '//*[@id="zixi-clusters"]/tbody'
 };
