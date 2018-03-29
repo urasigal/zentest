@@ -32,17 +32,16 @@ describe('WEB UI login tests', function() {
 //  });
   
   // Add a new cluster to ZEN.
-  it('Add broadcaster', function() {
+  //it('Add broadcaster', function() {
 	
-	  addBroadcasterTestDriver.addBroadcaster(); 
+	  //addBroadcasterTestDriver.addBroadcaster(); 
 	  
-  })
+  //})
 
   // Add a new receiver to ZEN.
   it('Add receiver', function() {
-	  addBroadcasterTestDriver.addReceiver(); 
+	  addReceiverTestDriver.addReceiver(); 
   });
   
-
 });
 
