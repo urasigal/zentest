@@ -8,5 +8,8 @@ module.exports = {
 	},
  broadcasterDashboardSelector: function(){
 	return element(by.xpath(xlocations.broadcasterXpath));
+	},
+ receiverDashboardSelector: function()(){
+	 return element(by.xpath(xlocations.receiverXpath));
 	}
   };

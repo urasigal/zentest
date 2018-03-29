@@ -3,6 +3,7 @@ const pathes =  require('./xpathes.js');
 const locations = require('./selecfunc.js');
 const addFeederDriver = require('./testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('./testDrivers/addBroadcasterTestDriver.js');
+const addReceiverTestDriver = require('./testDrivers/addReceiverTestDriver.js');
 
 describe('WEB UI login tests', function() {
 
@@ -30,11 +31,18 @@ describe('WEB UI login tests', function() {
 //	  
 //  });
   
+  // Add a new cluster to ZEN.
   it('Add broadcaster', function() {
 	
 	  addBroadcasterTestDriver.addBroadcaster(); 
 	  
+  })
+
+  // Add a new receiver to ZEN.
+  it('Add receiver', function() {
+	  addBroadcasterTestDriver.addReceiver(); 
   });
+  
 
 });
 

@@ -4,11 +4,11 @@ const locations = require('../selecfunc.js');
 const fillForm = require('../fillform.js');
 
 module.exports = {
-		addBroadcaster: function() {
+		addReceiver: function() {
 			return  new Promise(function(resolve, reject) {
 			// Fill a broadcaster's (cluster) form.
-			var broadcasterPannel = locations.broadcasterDashboardSelector();
-			broadcasterPannel.click().then(function() {
+			var receiverPannel = locations.receiverDashboardSelector();
+			receiverPannel.click().then(function() {
 				fillForm.fillNewBroadcasterFormAndSave();
 				
 				// Check if cluster was added.
