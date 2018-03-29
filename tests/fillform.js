@@ -104,7 +104,8 @@ module.exports = {
 		element(by.buttonText('Add Receiver')).click();
 		element(by.model('vm.name')).sendKeys('receiverqa');
 		let selectDropDownZen = new SelectDropDownZen();
-		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
+		
+		selectDropDownZen.checkDropDown('infra', xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
 		
 		element(by.model('vm.api_user')).clear().then(function(){
 				return element(by.model('vm.api_user')).sendKeys('admin');
