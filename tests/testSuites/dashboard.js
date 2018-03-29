@@ -1,9 +1,9 @@
 // imports
 const pathes =  require('../xpathes.js');
-const locations = require('./selecfunc.js');
-const addFeederDriver = require('./testDrivers/addFeederDriver.js');
-const addBroadcasterTestDriver = require('./testDrivers/addBroadcasterTestDriver.js');
-const addReceiverTestDriver = require('./testDrivers/addReceiverTestDriver.js');
+const locations = require('../selecfunc.js');
+const addFeederDriver = require('../testDrivers/addFeederDriver.js');
+const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
+const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
 
 describe('WEB UI login tests', function() {
 
