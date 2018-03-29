@@ -9,7 +9,7 @@ module.exports = {
 			// Fill a broadcaster's (cluster) form.
 			var receiverPannel = locations.receiverDashboardSelector();
 			receiverPannel.click().then(function() {
-				fillForm.fillNewBroadcasterFormAndSave();
+				fillForm.fillNewReceiverFormAndSave();
 				
 				// Check if cluster was added.
 				
