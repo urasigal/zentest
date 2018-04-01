@@ -11,10 +11,10 @@ module.exports = {
 			receiverPannel.click().then(function() {
 				return fillForm.fillNewReceiverFormAndSave();
 			}).then(() => {
-				var broadcasterPannel = locations.receiverDashboardSelector();
+				 receiverPannel = locations.receiverDashboardSelector();
 				return browser.sleep(5000);
 			}).then(function(){
-				return broadcasterPannel.click();
+				return receiverPannel.click();
 			}).then(function(){
 				return fillForm.parseBroadcasterTable('receiverqa');
 			}).then(function(res){
