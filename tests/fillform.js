@@ -122,8 +122,6 @@ module.exports = {
 				    });
 				
 			}).then(function(){
-				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click();
-			}).then(function(){
 				 element(by.buttonText('Save')).click();
 			});
   	}
