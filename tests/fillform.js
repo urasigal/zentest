@@ -50,6 +50,7 @@ module.exports = {
   },
   parseBroadcasterTable: function(finder){
 		let tableParser = new TableParser();
+		// res is a Promise.
 		let res = tableParser.parseTableAndFillArray(xpathes.clusterTableXpath);
 		 return new Promise(function(resolve, reject) {  res.then(function(arr){
 			for(let k = 0; k < arr.length; k ++)
