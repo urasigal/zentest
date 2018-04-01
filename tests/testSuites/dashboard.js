@@ -28,7 +28,6 @@ describe('WEB UI login tests', function() {
 	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
 	});
-	  
   });
   
    Add a new cluster to ZEN.
