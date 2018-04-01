@@ -124,16 +124,6 @@ module.exports = {
 			}).then(function(){
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click();
 			}).then(function(){
-				return element(by.buttonText('Continue')).click();
-			}).then(function(){
-				return element(by.model('vm.auth_mode')).click();
-			}).then(function(){
-				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
-			}).then(function(){
-				return element(by.model('vm.ffa_inputs')).click();
-			}).then(function(){
-				return element(by.model('vm.ffa_outputs')).click();
-			}).then(function(){
 				 element(by.buttonText('Save')).click();
 			});
   	}
