@@ -99,7 +99,9 @@ module.exports = {
 				 element(by.buttonText('Save')).click();
 			});
   	},
+  	// Add a receiver entity to the ZEN.
   	fillNewReceiverFormAndSave: function() {
+  		return new Promise( (resolve, reject ) => {
 		// Open receiver form.
 		element(by.buttonText('Add Receiver')).click();
 		element(by.model('vm.name')).sendKeys('receiverqa');
@@ -122,8 +124,9 @@ module.exports = {
 				    });
 				
 			}).then(function(){
-				 element(by.buttonText('Save')).click();
-			});
+				 return element(by.buttonText('Save')).click();
+			}).then(() => { resolve(""); });
+  		})
   	}
  };
 

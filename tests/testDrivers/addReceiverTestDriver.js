@@ -9,22 +9,20 @@ module.exports = {
 			// Fill a broadcaster's (cluster) form.
 			var receiverPannel = locations.receiverDashboardSelector();
 			receiverPannel.click().then(function() {
-				fillForm.fillNewReceiverFormAndSave();
-				
-				// Check if cluster was added.
-				
+				return fillForm.fillNewReceiverFormAndSave();
+			}).then(() => {
 				var broadcasterPannel = locations.broadcasterDashboardSelector();
-					browser.sleep(5000).then(function(){
-						return broadcasterPannel.click();
-					}).then(function(){
-						return fillForm.parseBroadcasterTable('broadcasterqa');
-						}).then(function(res){
-								resolve(res);
-							},function(res){
-								console.log('The res is ' + res);
-								reject(res);
-							});
-						});
+				return browser.sleep(5000);
+			}).then(function(){
+				return broadcasterPannel.click();
+			}).then(function(){
+				return fillForm.parseBroadcasterTable('broadcasterqa');
+			}).then(function(res){
+					resolve(res);
+				},function(res){
+					console.log('The res is ' + res);
+					reject(res);
+				});		
 			});
 		}
 }
