@@ -16,27 +16,27 @@ describe('WEB UI login tests', function() {
 	expect(dashboard.getText()).toEqual('Dashboard');
   });
 
-//  it('Add feeder', function(){
-//	//var feederPannel = locations.feederDashboardSelector();
-//	//feederPannel.click();
-//	//fillForm.fillNewFeederFormAndSave();
-//	  addFeederDriver.addFeederTestDriver().then(function(res){
-//		  expect(res).toBeTruthy();
-//	  }, function(err){
-//		  expect(err).toBeTruthy();
-//	  });
-//	  browser.sleep(20000).then(function() {
-//		  console.log('PASSED AFTER');
-//	});
-//	  
-//  });
-  
-  // Add a new cluster to ZEN.
-  //it('Add broadcaster', function() {
-	
-	  //addBroadcasterTestDriver.addBroadcaster(); 
+  it('Add feeder', function(){
+	var feederPannel = locations.feederDashboardSelector();
+	feederPannel.click();
+	fillForm.fillNewFeederFormAndSave();
+	  addFeederDriver.addFeederTestDriver().then(function(res){
+		  expect(res).toBeTruthy();
+	  }, function(err){
+		  expect(err).toBeTruthy();
+	  });
+	  browser.sleep(20000).then(function() {
+		  console.log('PASSED AFTER');
+	});
 	  
-  //})
+  });
+  
+   Add a new cluster to ZEN.
+  it('Add broadcaster', function() {
+	
+	  addBroadcasterTestDriver.addBroadcaster(); 
+	  
+  })
 
   // Add a new receiver to ZEN.
   it('Add receiver', function() {
