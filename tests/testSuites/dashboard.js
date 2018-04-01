@@ -30,7 +30,7 @@ describe('WEB UI login tests', function() {
 	});
   });
   
-   Add a new cluster to ZEN.
+   //Add a new cluster to ZEN.
   it('Add broadcaster', function() {
 	
 	  addBroadcasterTestDriver.addBroadcaster(); 
