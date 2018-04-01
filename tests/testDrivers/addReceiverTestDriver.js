@@ -16,7 +16,7 @@ module.exports = {
 			}).then(function(){
 				return receiverPannel.click();
 			}).then(function(){
-				return fillForm.parseBroadcasterTable('receiverqa');
+				return fillForm.parseTable('receiverqa', pathes.receiverTableXpath);
 			}).then(function(res){
 					resolve(res);
 				},function(res){

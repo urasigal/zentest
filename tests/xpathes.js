@@ -15,5 +15,7 @@ module.exports = {
     clusterTableXpath: '//*[@id="zixi-clusters"]/tbody',
     receiverXpath: '//*[@id="main-side-bar"]/ul/li[5]/a',
     receiverSSHKeyOuterXpath: '/html/body/div[1]/div/div/form/div[1]/div[2]/resource-tag-select/div',
-    receiverSSHKeyInnerXpath: '/html/body/div[1]/div/div/form/div[1]/div[2]/resource-tag-select/div/div[2]/div'
+    receiverSSHKeyInnerXpath: '/html/body/div[1]/div/div/form/div[1]/div[2]/resource-tag-select/div/div[2]/div',
+    // Xpath to receiver table
+    receiverTableXpath: '/html/body/div[1]/div/div/div[3]/div[2]/div/div/div[1]/div/div[2]/div/table/tbody'
 };
