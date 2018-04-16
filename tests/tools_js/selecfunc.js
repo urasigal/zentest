@@ -5,7 +5,7 @@ module.exports = {
  // Returns feeder locator on main UI pannel. 
  feederDashboardSelector: function(){
 	var dashFeeder = element(by.xpath(xlocations.feederXpath));
-	if (typeof variable === 'undefined') {
+	if (typeof dashFeeder === 'undefined') {
 	    throw new Error("Feeder's dashbord tab is not found");
 	}
 	return dashFeeder;
