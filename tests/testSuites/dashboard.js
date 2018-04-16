@@ -1,6 +1,6 @@
 // imports
 const pathes =  require('../const/xpathes.js');
-const locations = require('../selecfunc.js');
+const locations = require('../tools_js/selecfunc.js');
 const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
@@ -15,7 +15,7 @@ describe('WEB UI  tests', function() {
 	element(by.id('login_btn')).click();
 	var dashboard = element(by.xpath(pathes.dashPath));
 	expect(dashboard.getText()).toEqual('Dashboard');
-  });
+  }); 
 
   it('Add feeder', function(){
 	var feederPannel = locations.feederDashboardSelector();

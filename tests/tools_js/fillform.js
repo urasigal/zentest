@@ -1,8 +1,7 @@
 // imports
-const xpathes =  require('./xpathes.js');
-
-const SelectDropDownZen = require('./SelectDropDownZen.js');
-const TableParser = require('./TableParser.js');
+const xpathes =  require('../const/xpathes.js');
+const SelectDropDownZen = require('../SelectDropDownZen.js');
+const TableParser = require('../TableParser.js');
 
 module.exports = {
  	// Fill feeder form.

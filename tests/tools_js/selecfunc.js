@@ -1,5 +1,5 @@
 // imports
-const xlocations =  require('./xpathes.js');
+const xlocations =  require('../const/xpathes.js');
 
 module.exports = {
  // Returns feeder locator on main UI pannel. 

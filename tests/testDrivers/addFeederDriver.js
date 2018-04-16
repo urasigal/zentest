@@ -1,7 +1,7 @@
 // /zentest/tests/testDrivers/addFeederDriver.js
 // imports
 const pathes =  require('../const/xpathes.js');
-const locations = require('../selecfunc.js');
+const locations = require('../tools_js/selecfunc.js');
 const fillForm = require('../tools_js/fillform.js')
 module.exports = {
 	addFeederTestDriver: function (){
