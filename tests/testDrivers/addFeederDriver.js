@@ -6,9 +6,17 @@ const fillForm = require('../tools_js/fillform.js')
 module.exports = {
 	addFeederTestDriver: function (){
 		// Fill the feeder's form.
-		var feederPannel = locations.feederDashboardSelector();
-		feederPannel.click();
-		fillForm.fillNewFeederFormAndSave();
+		try{
+			var feederPannel = locations.feederDashboardSelector();
+		}catch(error){
+			return new Promise((resolve, reject) => {
+				  reject(false);
+				});
+		}
+		feederPannel.click().then(() => return new Promise((resolve, reject) => {
+			  resolve();
+		})).then(() => {fillForm.fillNewFeederFormAndSave();} );
+		
 		/////////////////////////////////////////////////////////
 		
 		///////////////////////////////////////////////////////////
