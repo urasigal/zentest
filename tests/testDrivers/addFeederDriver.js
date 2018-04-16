@@ -13,9 +13,10 @@ module.exports = {
 				  reject(false);
 				});
 		}
-		feederPannel.click().then(() => return new Promise((resolve, reject) => {
+		feederPannel.click().then(() => { return new Promise((resolve, reject) => {
 			  resolve();
-		})).then(() => {fillForm.fillNewFeederFormAndSave();} );
+			});
+		}).then(() => {fillForm.fillNewFeederFormAndSave();} );
 		
 		/////////////////////////////////////////////////////////
 		
