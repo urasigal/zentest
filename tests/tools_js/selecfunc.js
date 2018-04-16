@@ -4,8 +4,12 @@ const xlocations =  require('../const/xpathes.js');
 module.exports = {
  // Returns feeder locator on main UI pannel. 
  feederDashboardSelector: function(){
-	return element(by.xpath(xlocations.feederXpath));
-	},
+	var dashFeeder = element(by.xpath(xlocations.feederXpath));
+	if (typeof variable === 'undefined') {
+	    throw new Error("Feeder's dashbord tab is not found");
+	}
+	return dashFeeder;
+ },
  broadcasterDashboardSelector: function(){
 	return element(by.xpath(xlocations.broadcasterXpath));
 	},
