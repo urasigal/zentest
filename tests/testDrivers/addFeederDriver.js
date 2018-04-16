@@ -1,7 +1,7 @@
 // imports
 const pathes =  require('../xpathes.js');
 const locations = require('../selecfunc.js');
-const fillForm = require('../fillform.js');
+const fillForm = require('../tools_js/fillform.js')
 module.exports = {
 	addFeederTestDriver: function (){
 		// Fill the feeder's form.
