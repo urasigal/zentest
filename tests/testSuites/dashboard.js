@@ -5,7 +5,7 @@ const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
 
-describe('WEB UI login tests', function() {
+describe('WEB UI  tests', function() {
 
   it('User name and password are correct', function() {
 	browser.get('http://zixi.staging.devcloud.zixi.com');
@@ -35,7 +35,7 @@ describe('WEB UI login tests', function() {
 	
 	  addBroadcasterTestDriver.addBroadcaster(); 
 	  
-  })
+  });
 
   // Add a new receiver to ZEN.
   it('Add receiver', function() {
