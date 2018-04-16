@@ -36,7 +36,6 @@ module.exports = {
                 arr[k][p].then(function(txt){
                 	if(finder === txt)
                 	{
-                		console.log('find the match');
                 		resolve(true);
                 	}
                 });
@@ -61,7 +60,6 @@ module.exports = {
 	                arr[k][p].then(function(txt){
 	                	if(finder === txt)
 	                	{
-	                		console.log('find the match');
 	                		resolve(true);
 	                	}
 	                });
@@ -87,7 +85,6 @@ module.exports = {
 	                arr[k][p].then(function(txt){
 	                	if(finder === txt)
 	                	{
-	                		console.log('find the match');
 	                		resolve(true);
 	                	}
 	                });

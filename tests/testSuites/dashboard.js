@@ -4,6 +4,7 @@ const locations = require('../selecfunc.js');
 const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
+const fillForm = require('../tools_js/fillform.js');
 
 describe('WEB UI  tests', function() {
 
