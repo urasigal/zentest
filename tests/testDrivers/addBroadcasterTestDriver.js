@@ -3,6 +3,7 @@ const pathes =  require('../xpathes.js');
 const locations = require('../selecfunc.js');
 const fillForm = require('../fillform.js');
 
+// This module exports function that creates a new cluster in ZEN.
 module.exports = {
 		addBroadcaster: function() {
 			return  new Promise(function(resolve, reject) {
@@ -19,6 +20,7 @@ module.exports = {
 					}).then(function(){
 						return fillForm.parseBroadcasterTable('broadcasterqa');
 						}).then(function(res){
+								console.log('The res is ' + res);
 								resolve(res);
 							},function(res){
 								console.log('The res is ' + res);
