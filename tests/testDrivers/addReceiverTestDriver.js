@@ -1,7 +1,7 @@
 // Imports.
-const pathes =  require('../xpathes.js');
-const locations = require('../selecfunc.js');
-const fillForm = require('../fillform.js');
+const pathes =  require('../const/xpathes.js');
+const locations = require('../tools_js/selecfunc.js');
+const fillForm = require('../tools_js/fillform.js');
 
 module.exports = {
 		addReceiver: function() {
