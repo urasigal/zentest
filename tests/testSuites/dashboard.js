@@ -1,5 +1,5 @@
 // imports
-const pathes =  require('../xpathes.js');
+const pathes =  require('../const/xpathes.js');
 const locations = require('../selecfunc.js');
 const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
