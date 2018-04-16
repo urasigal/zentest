@@ -23,7 +23,7 @@ describe('WEB UI  tests', function() {
 		  expect(err).toBeTruthy();
 	  });
 	});
-  });
+ 
 //  
 //   //Add a new cluster to ZEN.
 //  it('Add broadcaster', function() {
