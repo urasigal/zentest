@@ -17,15 +17,15 @@ describe('WEB UI  tests', function() {
   }); 
 
   it('Add feeder', function(){
-	var feederPannel = locations.feederDashboardSelector();
-	try{
-		feederPannel.click();
-	}catch(error)
-	{
-		console.log(error.message);
-		expect(false).toBeTruthy();
-	}
-	fillForm.fillNewFeederFormAndSave();
+//	var feederPannel = locations.feederDashboardSelector();
+//	try{
+//		feederPannel.click();
+//	}catch(error)
+//	{
+//		console.log(error.message);
+//		expect(false).toBeTruthy();
+//	}
+//	fillForm.fillNewFeederFormAndSave();
 	  addFeederDriver.addFeederTestDriver().then(function(res){
 		  expect(res).toBeTruthy();
 	  }, function(err){
