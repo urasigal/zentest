@@ -24,12 +24,13 @@ describe('WEB UI  tests', function() {
 	}catch(error)
 	{
 		console.log(error.message);
+		expect(false).toBeTruthy();
 	}
 	fillForm.fillNewFeederFormAndSave();
 	  addFeederDriver.addFeederTestDriver().then(function(res){
 		  expect(res).toBeTruthy();
 	  }, function(err){
-		  expect(true).toBeTruthy();
+		  expect(err).toBeTruthy();
 	  });
 	  browser.sleep(20000).then(function() {
 		  console.log('PASSED AFTER');
