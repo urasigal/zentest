@@ -7,7 +7,6 @@ const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js')
 const fillForm = require('../tools_js/fillform.js');
 
 describe('WEB UI  tests', function() {
-
   it('User name and password are correct', function() {
 	browser.get('http://zixi.staging.devcloud.zixi.com');
 	element(by.model('vm.credentials.email')).sendKeys('admin@zixi.com');
