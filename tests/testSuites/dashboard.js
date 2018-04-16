@@ -29,18 +29,18 @@ describe('WEB UI  tests', function() {
 		  console.log('PASSED AFTER');
 	});
   });
-  
-   //Add a new cluster to ZEN.
-  it('Add broadcaster', function() {
-	
-	  addBroadcasterTestDriver.addBroadcaster(); 
-	  
-  });
-
-  // Add a new receiver to ZEN.
-  it('Add receiver', function() {
-	  addReceiverTestDriver.addReceiver(); 
-  });
+//  
+//   //Add a new cluster to ZEN.
+//  it('Add broadcaster', function() {
+//	
+//	  addBroadcasterTestDriver.addBroadcaster(); 
+//	  
+//  });
+//
+//  // Add a new receiver to ZEN.
+//  it('Add receiver', function() {
+//	  addReceiverTestDriver.addReceiver(); 
+//  });
   
 });
 
