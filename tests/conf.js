@@ -1,6 +1,6 @@
 exports.config = {
   seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
-  specs: ['testSuites/dashboard.js'],
+  specs: ['testSuites/add_cluster.js', 'testSuites/add_feeder.js', 'testSuites/add_receiver.js'],
   capabilities: {
     browserName: 'firefox'
   },
