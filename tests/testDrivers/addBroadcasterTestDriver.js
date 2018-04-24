@@ -2,6 +2,7 @@
 const pathes =  require('../const/xpathes.js');
 const locations = require('../tools_js/selecfunc.js');
 const fillForm = require('../tools_js/fillform.js');
+const httpClient = require('../http_client/httpClient.js');
 
 // This module exports function that creates a new cluster in ZEN.
 module.exports = {
@@ -13,7 +14,6 @@ module.exports = {
 				fillForm.fillNewBroadcasterFormAndSave();
 				
 				// Check if cluster was added.
-				
 				var broadcasterPannel = locations.broadcasterDashboardSelector();
 					browser.sleep(5000).then(function(){
 						return broadcasterPannel.click();
@@ -21,6 +21,7 @@ module.exports = {
 						return fillForm.parseBroadcasterTable('broadcasterqa');
 						}).then(function(res){
 								console.log('The res is ' + res);
+								httpClient.doGetTo('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
 								resolve(res);
 							},function(res){
 								console.log('The res is ' + res);
