@@ -4,7 +4,7 @@ const pathes =  require('../const/xpathes.js');
 const locations = require('../tools_js/selecfunc.js');
 const fillForm = require('../tools_js/fillform.js')
 module.exports = {
-	addFeederTestDriver: function (){
+	addFeederTestDriver: function (feederConf){
 		// Fill the feeder's form.
 		try{
 			var feederPannel = locations.feederDashboardSelector();
@@ -26,18 +26,18 @@ module.exports = {
 		
 		browser.sleep(5000).then(function(){
 			feederPannel.click().then(function(){
-				fillForm.parseFeederTable('feederqa').then(function(res){
-					console.log('The res is ' + res);
-					resolve(res);
-				},function(res){
-					console.log('The res is ' + res);
-					reject(res);
+				fillForm.parseFeederTable(feederConf.feederName).then(function(res){
+							console.log('The res is ' + res);
+							resolve(res);
+						}, function(res){
+							console.log('The res is ' + res);
+							reject(res);
+					});
 				});
 			});
-		});
-		browser.sleep(6000).then(function(){
-			reject(false);
-			});
-	});
+			browser.sleep(6000).then(function(){
+				reject(false);
+				});
+		 })	;
 	}
 };

@@ -5,20 +5,20 @@ const TableParser = require('../TableParser.js');
 
 module.exports = {
  	// Fill feeder form.
- fillNewFeederFormAndSave: function(){
+ fillNewFeederFormAndSave: function(feederConf){
 	// Open feeder form.
     element(by.buttonText('Add')).click();
 	// Provide feeder name - used by ZEN.
-	element(by.model('vm.name')).sendKeys('feederqa');
+	element(by.model('vm.name')).sendKeys(feederConf.feederName);
 	//  Select available access tags
 	let selectDropDownZen = new SelectDropDownZen();
-	selectDropDownZen.checkDropDown('infra', xpathes.feederAccessOuterContainer, xpathes.feederAccessTag);
+	selectDropDownZen.checkDropDown(feederConf.accessTag, xpathes.feederAccessOuterContainer, xpathes.feederAccessTag);
 	let userField = element(by.model('vm.api_user'));
-	userField.clear().then(function(){userField.sendKeys('admin');
+	userField.clear().then(function(){userField.sendKeys(feederConf.apiUser);
 		}).then(function(){
-				element(by.model('vm.api_password')).sendKeys('1234');
+				element(by.model('vm.api_password')).sendKeys(feederConf.apiPass);
 			});
-	selectDropDownZen.checkDropDown('~~~~', xpathes.feederSSHOuterDropDown, xpathes.feederSSHInnerDropDown);
+	selectDropDownZen.checkDropDown(feederConf.sshKey, xpathes.feederSSHOuterDropDown, xpathes.feederSSHInnerDropDown);
 	browser.sleep(2000).then(function(){element(by.buttonText('Save')).click();
 		});
       },

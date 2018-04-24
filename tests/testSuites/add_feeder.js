@@ -5,8 +5,9 @@ const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
 const fillForm = require('../tools_js/fillform.js');
+const feederConf = require('../suites_cfg/feeder_simple.js');
 
-describe('WEB UI  tests', function() {
+describe('loggin', function() {
   it('User name and password are correct', function() {
 	browser.get('http://zixi.staging.devcloud.zixi.com');
 	element(by.model('vm.credentials.email')).sendKeys('admin@zixi.com');
@@ -16,13 +17,12 @@ describe('WEB UI  tests', function() {
 	expect(dashboard.getText()).toEqual('Dashboard');
   }); 
 
-  it('Add feeder', function(){
-	  addFeederDriver.addFeederTestDriver().then(function(res){
+  it('Add feeder - simple case', function(){
+	  addFeederDriver.addFeederTestDriver(feederConf).then(function(res){
 		  expect(res).toBeTruthy();
 	  }, function(err){
 		  expect(err).toBeTruthy();
 	  });
 	});
- 
 });
 
