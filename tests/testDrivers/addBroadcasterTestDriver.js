@@ -21,8 +21,9 @@ module.exports = {
 						return fillForm.parseBroadcasterTable('broadcasterqa');
 						}).then(function(res){
 								console.log('The res is ' + res);
-								httpClient.doGetTo('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-								resolve(res);
+								httpClient.doGetTo('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').then(function(resp) {
+									resolve(res);
+								}); 
 							},function(res){
 								console.log('The res is ' + res);
 								reject(res);
