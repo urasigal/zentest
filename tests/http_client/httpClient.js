@@ -43,8 +43,7 @@ module.exports = {
 								reject("Error while HTTP request");
 							});
 					}
-				}
-				
+				}); // End of return expression - return Promise.
 			})();
 		}
 }
