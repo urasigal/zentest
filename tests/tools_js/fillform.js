@@ -110,11 +110,11 @@ module.exports = {
 				if(clusterConf.ingest) 
 					return element(by.model('vm.can_input')).click();
 				else
-					return new Promise((resolve, reject) => resolve(););
+					return new Promise((resolve, reject) => resolve());
 			}).then(function() {
 				if(clusterConf.channelProc)
 					return element(by.model('vm.can_process')).click();
-				else new Promise((resolve, reject) => resolve(););
+				else new Promise((resolve, reject) => resolve());
 			}).then(function(){ // Scaling account
 				return element(by.xpath(xpathes.clusterScalingOuter)).click();
 			}).then(function(){ // Scaling account
@@ -128,11 +128,11 @@ module.exports = {
 			}).then(function(){
 				if(clusterConf.pushInputs)
 					return element(by.model('vm.ffa_inputs')).click();
-				else new Promise((resolve, reject) => resolve(););
+				else new Promise((resolve, reject) => resolve());
 			}).then(function(){
 				if(clusterConf.pullOutputs)
 					return element(by.model('vm.ffa_outputs')).click();
-				else new Promise((resolve, reject) => resolve(););
+				else new Promise((resolve, reject) => resolve());
 			}).then(function(){
 				 element(by.buttonText('Save')).click();
 			});
