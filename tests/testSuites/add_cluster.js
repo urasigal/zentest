@@ -5,6 +5,7 @@ const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
 const fillForm = require('../tools_js/fillform.js');
+const clusterConf = require('../suites_cfg/cluster_simple.js');
 
 describe('WEB UI  tests', function() {
   it('User name and password are correct', function() {
@@ -19,7 +20,7 @@ describe('WEB UI  tests', function() {
    //Add a new cluster to ZEN.
   it('Add broadcaster', function() {
 	
-	  addBroadcasterTestDriver.addBroadcaster(); 
+	  addBroadcasterTestDriver.addBroadcaster(clusterConf); 
   });
   
 });

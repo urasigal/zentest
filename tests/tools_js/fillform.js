@@ -96,28 +96,43 @@ module.exports = {
 		});
 },
 	  
-  fillNewBroadcasterFormAndSave: function() {
+  fillNewBroadcasterFormAndSave: function(clusterConf) {
 		// Open feeder form.
-		element(by.buttonText('Add')).click();
-		element(by.model('vm.name')).sendKeys('broadcasterqa');
-		let selectDropDownZen = new SelectDropDownZen();
-		selectDropDownZen.checkDropDown('infra', xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
-		element(by.model('vm.can_input')).click().then(function() {
-			    return element(by.model('vm.can_process')).click();
-			}).then(function(){
-				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[1]')).click();
-			}).then(function(){
-				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[5]/div[1]/div[2]/div/div[1]')).click();
+		element(by.buttonText('Add')).click().then(()=>{ 
+			return 'clicked';
+			}).then(res => {element(by.model('vm.name')).sendKeys(clusterConf.clusterName); // Set cluster name. 
+			return 'keys sent';
+			}).then(res => {
+				let selectDropDownZen = new SelectDropDownZen();
+				// Select access tag
+				selectDropDownZen.checkDropDown(clusterConf.accessTag, xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
+				// Check here if it is an ingest cluster.
+				if(clusterConf.ingest) 
+					return element(by.model('vm.can_input')).click();
+				else
+					return new Promise((resolve, reject) => resolve(););
+			}).then(function() {
+				if(clusterConf.channelProc)
+					return element(by.model('vm.can_process')).click();
+				else new Promise((resolve, reject) => resolve(););
+			}).then(function(){ // Scaling account
+				return element(by.xpath(xpathes.clusterScalingOuter)).click();
+			}).then(function(){ // Scaling account
+				return element(by.xpath(xpathes.clusterScalingInner)).click();
 			}).then(function(){
 				return element(by.buttonText('Continue')).click();
 			}).then(function(){
-				return element(by.model('vm.auth_mode')).click();
+				return element(by.model('vm.auth_mode')).click();// Select auth mode
 			}).then(function(){
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
 			}).then(function(){
-				return element(by.model('vm.ffa_inputs')).click();
+				if(clusterConf.pushInputs)
+					return element(by.model('vm.ffa_inputs')).click();
+				else new Promise((resolve, reject) => resolve(););
 			}).then(function(){
-				return element(by.model('vm.ffa_outputs')).click();
+				if(clusterConf.pullOutputs)
+					return element(by.model('vm.ffa_outputs')).click();
+				else new Promise((resolve, reject) => resolve(););
 			}).then(function(){
 				 element(by.buttonText('Save')).click();
 			});
