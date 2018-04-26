@@ -22,7 +22,11 @@ describe('WEB UI  tests', function() {
    //Add a new cluster to ZEN.
   it('Add broadcaster', function() {
 	
-	  addBroadcasterTestDriver.addBroadcaster(clusterConf); 
+	  addBroadcasterTestDriver.addBroadcaster(clusterConf).then(function(res){
+		  expect(res).toBeTruthy();
+	  }, function(err){
+		  expect(err).toBeTruthy();
+	  });
   });
   
 });
