@@ -16,7 +16,7 @@ module.exports = {
 			}).then(function(){
 				return receiverPannel.click();
 			}).then(function(){
-				return fillForm.parseTable(receiverConfre.receiverName, pathes.receiverTableXpath);
+				return fillForm.parseTable(receiverConf.receiverName, pathes.receiverTableXpath);
 			}).then(function(res){
 					resolve(res);
 				},function(res){
