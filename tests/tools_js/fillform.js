@@ -40,7 +40,7 @@ module.exports = {
                 });
 			}
         }
-		browser.sleep(4000).then(function() {
+		browser.sleep(4000).then(function()parseTable {
 			reject(false);
 		});
 	  });
