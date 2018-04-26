@@ -74,7 +74,7 @@ module.exports = {
   parseTable: function(finder, tableXpath){
 		let tableParser = new TableParser();
 		// res is a Promise.
-		let res = tableParser.parseTableAndFillArray(xpathes.tableXpath);
+		let res = tableParser.parseTableAndFillArray(tableXpath);
 		 return new Promise(function(resolve, reject) {  res.then(function(arr){
 			for(let k = 0; k < arr.length; k ++)
 	        {
