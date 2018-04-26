@@ -22,8 +22,6 @@ describe('WEB UI  tests', function() {
   it('Add receiver', function() {
 	  addReceiverTestDriver.addReceiver(receiverConf).then(function(res){
 		  expect(res).toBeTruthy();
-	  }, function(err){
-		  expect(err).toBeTruthy();
 	  });
   });
   
