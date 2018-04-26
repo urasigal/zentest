@@ -138,22 +138,22 @@ module.exports = {
 			});
   	},
   	// Add a receiver entity to the ZEN.
-  	fillNewReceiverFormAndSave: function() {
+  	fillNewReceiverFormAndSave: function(receiverConf) {
   		return new Promise( (resolve, reject ) => {
 		// Open receiver form.
 		element(by.buttonText('Add Receiver')).click();
-		element(by.model('vm.name')).sendKeys('receiverqa');
+		element(by.model('vm.name')).sendKeys(receiverConf.receiverName);
 		let selectDropDownZen = new SelectDropDownZen();
 		
-		selectDropDownZen.checkDropDown('infra', xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
+		selectDropDownZen.checkDropDown(receiverConf.accessTag, xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
 		
 		element(by.model('vm.api_user')).clear().then(function(){
-				return element(by.model('vm.api_user')).sendKeys('admin');
+				return element(by.model('vm.api_user')).sendKeys(receiverConf.apiUser);
 			}).then(function() {
-			    return element(by.model('vm.api_password')).sendKeys('1234');
+			    return element(by.model('vm.api_password')).sendKeys(receiverConf.apiPass);
 			}).then(function(){
 				
-				selectDropDownZen.checkDropDown('~~~~', xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
+				selectDropDownZen.checkDropDown(receiverName.sshKey, xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
 				// Insert artificial delay. 
 				return new Promise((resolve, reject) => {
 				      setTimeout(() => {

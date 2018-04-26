@@ -5,6 +5,7 @@ const addFeederDriver = require('../testDrivers/addFeederDriver.js');
 const addBroadcasterTestDriver = require('../testDrivers/addBroadcasterTestDriver.js');
 const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js');
 const fillForm = require('../tools_js/fillform.js');
+const receiverConf = require('../suites_cfg/receiver_simple.js');
 
 describe('WEB UI  tests', function() {
   it('User name and password are correct', function() {
@@ -18,7 +19,7 @@ describe('WEB UI  tests', function() {
 
   // Add a new receiver to ZEN.
   it('Add receiver', function() {
-	  addReceiverTestDriver.addReceiver(); 
+	  addReceiverTestDriver.addReceiver(receiverConf); 
   });
   
 });
