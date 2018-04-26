@@ -153,7 +153,7 @@ module.exports = {
 			    return element(by.model('vm.api_password')).sendKeys(receiverConf.apiPass);
 			}).then(function(){
 				
-				selectDropDownZen.checkDropDown(receiverName.sshKey, xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
+				selectDropDownZen.checkDropDown(receiverConf.sshKey, xpathes.receiverSSHKeyOuterXpath, xpathes.receiverSSHKeyInnerXpath);
 				// Insert artificial delay. 
 				return new Promise((resolve, reject) => {
 				      setTimeout(() => {
