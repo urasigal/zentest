@@ -17,10 +17,8 @@ module.exports = class SelectDropDownZen {
 				let item;
 				item = items[i];
 				item.getText().then(function(tagName){
-					console.log(tagName + "@");
 					if(tagName === finderString)
 					{
-						console.log('FOUND');
 						browser.actions().mouseMove(item).perform().then(function(){
 							 item.click();
 						});
