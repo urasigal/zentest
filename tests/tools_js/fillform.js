@@ -96,8 +96,9 @@ module.exports = {
 },
 	  
   fillNewBroadcasterFormAndSave: function(clusterConf) {
-		// Open feeder form.
-		element(by.buttonText('Add')).click().then(()=>{ 
+		return new Promise((resolve, reject) => {
+	     // Open feeder form.
+		 element(by.buttonText('Add')).click().then( ()=> { 
 			return 'clicked';
 			}).then(res => {element(by.model('vm.name')).sendKeys(clusterConf.clusterName); // Set cluster name. 
 			return 'keys sent';
@@ -133,8 +134,9 @@ module.exports = {
 					return element(by.model('vm.ffa_outputs')).click();
 				else new Promise((resolve, reject) => resolve());
 			}).then(function(){
-				 element(by.buttonText('Save')).click();
-			});
+				 return element(by.buttonText('Save')).click();
+			}).tnen( () => { resolve(); });
+		});
   	},
   	// Add a receiver entity to the ZEN.
   	fillNewReceiverFormAndSave: function(receiverConf) {

@@ -7,12 +7,12 @@ const httpClient = require('../http_client/httpClient.js');
 // This module exports function that creates a new cluster in ZEN.
 module.exports = {
 		addBroadcaster: function(clusterConf) {
-			return  new Promise(function(resolve, reject) {
+			return  new Promise((resolve, reject) => {
 			// Fill a broadcaster's (cluster) form.
 			var broadcasterPannel = locations.broadcasterDashboardSelector();
 			broadcasterPannel.click().then(function() {
-				fillForm.fillNewBroadcasterFormAndSave(clusterConf);
-				
+				return Promise((resolve, reject) = {resolve()});
+			}).then(() => { return fillForm.fillNewBroadcasterFormAndSave(clusterConf);}).then( () => {
 				// Check if cluster was added.
 				var broadcasterPannel = locations.broadcasterDashboardSelector();
 					browser.sleep(5000).then(function(){
@@ -29,7 +29,7 @@ module.exports = {
 								console.log('The res is ' + res);
 								reject(res);
 							});
-						});
+				});
 			});
 		}
 }

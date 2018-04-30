@@ -20,9 +20,19 @@ describe('WEB UI  tests', function() {
   }); 
   
    //Add a new cluster to ZEN.
-  it('Add broadcaster', function() {
+  it('Add a new cluster to ZEN', function() {
 	
 	  addBroadcasterTestDriver.addBroadcaster(clusterConf).then(function(res){
+		  expect(res).toBeTruthy();
+	  }, function(err){
+		  expect(err).toBeTruthy();
+	  });
+  });
+  
+  
+  it('Add broadcaster to cluster', function() {
+		
+	  addBroadcasterToClusterTestDriver.addBroadcaster(clusterConf).then(function(res){
 		  expect(res).toBeTruthy();
 	  }, function(err){
 		  expect(err).toBeTruthy();
