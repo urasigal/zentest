@@ -21,7 +21,8 @@ module.exports = {
 						return fillForm.parseBroadcasterTable(clusterConf.clusterName);
 						}).then(function(res){
 								console.log('The res is ' + res);
-								httpClient.doGetTo('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').then(function(resp) {
+								// Make HTTP request 
+								httpClient.doGetTo('127.0.0.1/testlink?testid=DEMO_KEY&result=pass').then(function(resp) {
 									resolve(res);
 								}); 
 							},function(res){

@@ -78,7 +78,6 @@ module.exports = {
 		 return new Promise(function(resolve, reject) {  res.then(function(arr){
 			for(let k = 0; k < arr.length; k ++)
 	        {
-				
 	            for(let p = 0; p < arr[k].length; p++)
 				{
 	                arr[k][p].then(function(txt){
