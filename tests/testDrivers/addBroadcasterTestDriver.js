@@ -30,9 +30,9 @@ module.exports = {
 							// Make HTTP request
 							if(res === true)
 							{
-								console.log('request to test link is' + testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass')
+								console.log('request to test link is ' + testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass')
 								httpClient.doGetTo(testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass').then((resp) => {
-									console.log("Test link response is " + resp);
+									console.log('Test link response is ' + resp);
 									resolve(res);
 								}, (err) => {
 									resolve(false);
@@ -40,9 +40,10 @@ module.exports = {
 							}else
 							{
 								httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=failed').then((resp)=> {
-									console.log("Test link response is " + resp);
+									console.log('Test link response is ' + resp);
 									resolve(res);
 								},(err) => {
+									console.log("Test link err is " + err);
 									resolve(false);
 								});
 							}
