@@ -3,5 +3,5 @@
  */
 
 module.exports = {
-		testLinkURL: '192.168.184.152:5566/testlink?'
+		testLinkURL: '192.168.0.11:5566/testlink?'
 }
