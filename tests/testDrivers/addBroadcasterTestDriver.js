@@ -31,6 +31,7 @@ module.exports = {
 								if(res == true)
 								{
 									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=pass').then((resp) => {
+										console.log("Test link response is " + resp);
 										resolve(res);
 									}, (err) => {
 										resolve(false);
@@ -38,6 +39,7 @@ module.exports = {
 								}else
 								{
 									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=failed').then((resp)=> {
+										console.log("Test link response is " + resp);
 										resolve(res);
 									},(err) => {
 										resolve(false);
