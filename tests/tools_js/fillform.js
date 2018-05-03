@@ -98,20 +98,6 @@ module.exports = {
   fillNewBroadcasterFormAndSave: function(clusterConf) {
 		return new Promise((resolve, reject) => {
 		     // Open feeder form.
-			 element(by.buttonText('Add')).click().then( ()=> { 
-			   return 'clicked';
-			}).then( res => { element(by.model('vm.name')).sendKeys(clusterConf.clusterName)}).then( () => { // Set cluster name. 
-				return 'keys sent';
-			}).then(res => {
-				let selectDropDownZen = new SelectDropDownZen();
-				// Select access tag
-				selectDropDownZen.checkDropDown(clusterConf.accessTag, xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
-				// Check here if it is an ingest cluster.
-				if(clusterConf.ingest) 
-					return element(by.model('vm.can_input')).click();
-				else
-					return new Promise((resolve, reject) => resolve());
-			}).then(function() {
 				if(clusterConf.channelProc)
 					return element(by.model('vm.can_process')).click();
 				else new Promise((resolve, reject) => resolve());
@@ -135,7 +121,7 @@ module.exports = {
 				else {return new Promise((resolve, reject) => resolve());}
 			}).then(function(){
 				 return element(by.buttonText('Save')).click();
-			}).tnen( () => { resolve(); });
+			}).then( () => { resolve(); });
 		});
   	},
   	// Add a receiver entity to the ZEN.
