@@ -30,13 +30,17 @@ module.exports = {
 								// Make HTTP request
 								if(res == true)
 								{
-									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=pass').then(function(resp) {
+									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=pass').then((resp) => {
 										resolve(res);
+									}, (err) => {
+										resolve(false);
 									}); 
 								}else
 								{
-									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=failed').then(function(resp) {
+									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=failed').then((resp)=> {
 										resolve(res);
+									},(err) => {
+										resolve(false);
 									});
 								}
 							},function(res){

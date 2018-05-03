@@ -31,14 +31,14 @@ describe('WEB UI  tests', function() {
   });
   
   
-  it('Add broadcaster to cluster', function() {
-		
-	  addBroadcasterToClusterTestDriver.addBroadcaster(clusterConf).then(function(res){
-		  expect(res).toBeTruthy();
-	  }, function(err){
-		  expect(err).toBeTruthy();
-	  });
-  });
+//  it('Add broadcaster to cluster', function() {
+//		
+//	  addBroadcasterToClusterTestDriver.addBroadcaster(clusterConf).then(function(res){
+//		  expect(res).toBeTruthy();
+//	  }, function(err){
+//		  expect(err).toBeTruthy();
+//	  });
+//  });
   
 });
 
