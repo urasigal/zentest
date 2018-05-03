@@ -2,14 +2,14 @@
 const pathes =  require('../const/xpathes.js');
 const locations = require('../tools_js/selecfunc.js');
 const fillForm = require('../tools_js/fillform.js');
-const https = require('https');
+const http = require('http');
 
 module.exports = {
 		doGetTo: function(url) {
 			    // Self invoking module.
 				return  (function(){
 					return new Promise(function(resolve, reject) {  
-							https.get(url, (resp) => {
+							http.get(url, (resp) => {
 								  let data = '';
 								  // A chunk of data has been received.
 								  resp.on('data', (chunk) => {
