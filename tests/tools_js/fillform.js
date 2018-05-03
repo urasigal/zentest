@@ -97,10 +97,10 @@ module.exports = {
 	  
   fillNewBroadcasterFormAndSave: function(clusterConf) {
 		return new Promise((resolve, reject) => {
-	     // Open feeder form.
-		 element(by.buttonText('Add')).click().then( ()=> { 
+		     // Open feeder form.
+			 element(by.buttonText('Add')).click().then( ()=> { 
 			   return 'clicked';
-			}).then( res => {element(by.model('vm.name')).sendKeys(clusterConf.clusterName).then( () => { // Set cluster name. 
+			}).then( res => { element(by.model('vm.name')).sendKeys(clusterConf.clusterName)}).then( () => { // Set cluster name. 
 				return 'keys sent';
 			}).then(res => {
 				let selectDropDownZen = new SelectDropDownZen();
