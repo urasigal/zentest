@@ -30,6 +30,7 @@ module.exports = {
 							// Make HTTP request
 							if(res === true)
 							{
+								onsole.log('request to test link is' + testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass')
 								httpClient.doGetTo(testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass').then((resp) => {
 									console.log("Test link response is " + resp);
 									resolve(res);
