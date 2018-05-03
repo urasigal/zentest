@@ -30,7 +30,7 @@ module.exports = {
 								// Make HTTP request
 								if(res == true)
 								{
-									httpClient.doGetTo(testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass').then(function(resp) {
+									httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=pass').then(function(resp) {
 										resolve(res);
 									}); 
 								}else
