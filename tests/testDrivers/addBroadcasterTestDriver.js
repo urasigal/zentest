@@ -35,6 +35,7 @@ module.exports = {
 									console.log('Test link response is ' + resp);
 									resolve(res);
 								}, (err) => {
+									console.log("Test link err is " + err);
 									resolve(false);
 								}); 
 							}else
