@@ -98,7 +98,19 @@ module.exports = {
   fillNewBroadcasterFormAndSave: function(clusterConf) {
 		return new Promise((resolve, reject) => 
 		{
-			element(by.buttonText('Add')).click().then(() => {
+			element(by.buttonText('Add')).click().then(() =>{
+				return element(by.model('vm.name')).sendKeys(clusterConf.clusterName);
+			}).then(()=> {
+				let selectDropDownZen = new SelectDropDownZen();
+				selectDropDownZen.checkDropDown(clusterConf.accessTag, xpathes.broadcasterAccessOuterContainer, xpathes.broadcasterAccessTag);
+				return new Promise( (resolve, reject) => resolve() );
+			}).then(()=>{
+				if(clusterConf.ingest)
+				{
+					return element(by.model('vm.can_input')).click();
+				}
+				return new Promise( (resolve, reject) => resolve() );
+			}).then(() => {
 			if(clusterConf.channelProc)
 				return element(by.model('vm.can_process')).click();
 			else return new Promise( (resolve, reject) => resolve() );
