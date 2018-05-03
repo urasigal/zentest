@@ -26,11 +26,11 @@ module.exports = {
 				}).then(function(){
 					return fillForm.parseBroadcasterTable(clusterConf.clusterName);
 					}).then(function(res){
-							console.log('The res is ' + res);
+							console.log('Cluster res is ' + res);
 							// Make HTTP request
 							if(res == true)
 							{
-								httpClient.doGetTo(testLinkconnection.testLinkURL + '&testid=' + testId + '&result=pass').then((resp) => {
+								httpClient.doGetTo(testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass').then((resp) => {
 									console.log("Test link response is " + resp);
 									resolve(res);
 								}, (err) => {
