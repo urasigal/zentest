@@ -98,10 +98,10 @@ module.exports = {
   fillNewBroadcasterFormAndSave: function(clusterConf) {
 		return new Promise((resolve, reject) => 
 		{
-		     new Promise( (resolve, reject) => { if(clusterConf.channelProc)
-					return element(by.model('vm.can_process')).click();
-				else return new Promise( (resolve, reject) => resolve() );
-				 
+			element(by.buttonText('Add')).click().then(() => {
+			if(clusterConf.channelProc)
+				return element(by.model('vm.can_process')).click();
+			else return new Promise( (resolve, reject) => resolve() );
 			}).then(function(){ // Scaling account
 				return element(by.xpath(xpathes.clusterScalingOuter)).click();
 			}).then(function(){ // Scaling account
