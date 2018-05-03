@@ -28,7 +28,7 @@ module.exports = {
 					}).then(function(res){
 							console.log('Cluster res is ' + res);
 							// Make HTTP request
-							if(res == true)
+							if(res === true)
 							{
 								httpClient.doGetTo(testLinkconnection.testLinkURL + 'testid=' + testId + '&result=pass').then((resp) => {
 									console.log("Test link response is " + resp);
