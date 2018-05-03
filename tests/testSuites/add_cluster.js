@@ -7,6 +7,7 @@ const addReceiverTestDriver = require('../testDrivers/addReceiverTestDriver.js')
 const fillForm = require('../tools_js/fillform.js');
 const clusterConf = require('../suites_cfg/cluster_simple.js');
 
+
 describe('WEB UI  tests', function() {
   it('User name and password are correct', function() {
 	  browser.sleep(10000).then(() =>{
@@ -21,8 +22,8 @@ describe('WEB UI  tests', function() {
   
    //Add a new cluster to ZEN.
   it('Add a new cluster to ZEN', function() {
-	
-	  addBroadcasterTestDriver.addBroadcaster(clusterConf).then(function(res){
+	  var testId = '8603';
+	  addBroadcasterTestDriver.addBroadcaster(clusterConf, testId).then(function(res){
 		  expect(res).toBeTruthy();
 	  }, function(err){
 		  expect(err).toBeTruthy();
