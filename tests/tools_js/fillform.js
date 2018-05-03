@@ -99,9 +99,9 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 	     // Open feeder form.
 		 element(by.buttonText('Add')).click().then( ()=> { 
-			return 'clicked';
-			}).then(res => {element(by.model('vm.name')).sendKeys(clusterConf.clusterName); // Set cluster name. 
-			return 'keys sent';
+			   return 'clicked';
+			}).then( res => {element(by.model('vm.name')).sendKeys(clusterConf.clusterName).then( () => { // Set cluster name. 
+				return 'keys sent';
 			}).then(res => {
 				let selectDropDownZen = new SelectDropDownZen();
 				// Select access tag
@@ -127,12 +127,12 @@ module.exports = {
 				return element(by.xpath('/html/body/div[1]/div/div/form/div[1]/div/div[1]/select/option[4]')).click();
 			}).then(function(){
 				if(clusterConf.pushInputs)
-					return element(by.model('vm.ffa_inputs')).click();
-				else new Promise((resolve, reject) => resolve());
+					{return element(by.model('vm.ffa_inputs')).click();}
+				else {return new Promise((resolve, reject) => resolve());}
 			}).then(function(){
 				if(clusterConf.pullOutputs)
-					return element(by.model('vm.ffa_outputs')).click();
-				else new Promise((resolve, reject) => resolve());
+					{return element(by.model('vm.ffa_outputs')).click();}
+				else {return new Promise((resolve, reject) => resolve());}
 			}).then(function(){
 				 return element(by.buttonText('Save')).click();
 			}).tnen( () => { resolve(); });
