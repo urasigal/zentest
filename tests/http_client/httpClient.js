@@ -14,12 +14,12 @@ module.exports = {
 								  var data = '';
 								  // A chunk of data has been received.
 								  resp.on('data', (chunk) => {
-									  console.log('chunk is ' + chunk);
+									console.log('chunk is ' + chunk);
 								    data += chunk;
 								  });
 								  // The whole response has been received. Print out the result.
 								  resp.on('end', () => {
-									console.log(data);
+									console.log('data is ' + data);
 								    console.log(JSON.parse(data));
 								    resolve(data);
 								  }); 
