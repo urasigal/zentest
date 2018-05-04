@@ -11,6 +11,7 @@ module.exports = {
 					return new Promise(function(resolve, reject) {
 							console.log('URL is ' + url);
 							http.get(url, (resp) => {
+								console.log('STATUS: ' + resp.statusCode);
 								  var data = '';
 								  // A chunk of data has been received.
 								  resp.on('data', (chunk) => {
