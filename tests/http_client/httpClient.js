@@ -11,7 +11,7 @@ module.exports = {
 					return new Promise(function(resolve, reject) {
 							console.log('URL is ' + url);
 							http.get(url, (resp) => {
-								  let data = '';
+								  var data = '';
 								  // A chunk of data has been received.
 								  resp.on('data', (chunk) => {
 									  console.log('chunk is ' + chunk);
