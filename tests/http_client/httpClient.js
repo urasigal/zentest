@@ -8,7 +8,8 @@ module.exports = {
 		doGetTo: function(url) {
 			    // Self invoking module.
 				return  (function(){
-					return new Promise(function(resolve, reject) {  
+					return new Promise(function(resolve, reject) {
+							console.log('URL is ' + url);
 							http.get(url, (resp) => {
 								  let data = '';
 								  // A chunk of data has been received.
