@@ -12,11 +12,11 @@ module.exports = {
 			locations.receiverDashboardSelector().click(). // Navigate to the receiver panel.
 			// Fill a receiver form and save.
 			then(() => { return fillForm.fillNewReceiverFormAndSave(receiverConf);
-			}).then(() => return browser.sleep(5000)
+			}).then(() =>  browser.sleep(5000)
 			// Testing part
 			//////////////////////////////////////////////////////////////////////////////
 			// Check if cluster was added.
-			).then(() => return locations.receiverDashboardSelector().click(); // Select receiver panel
+			).then(() =>  locations.receiverDashboardSelector().click(); // Select receiver panel
 			).then(function(){ return fillForm.parseTable(receiverConf.receiverName, pathes.receiverTableXpath);
 			}).then((res)=> { // Set result to the Test Link and fulfill the Promise object
 				resolve(httpClient.setResultToTestLink(res, testId));
