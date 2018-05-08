@@ -16,7 +16,7 @@ module.exports = {
 			// Testing part
 			//////////////////////////////////////////////////////////////////////////////
 			// Check if cluster was added.
-			).then(() =>  locations.receiverDashboardSelector().click()) // Select receiver panel
+			).then(() =>  locations.receiverDashboardSelector().click() // Select receiver panel
 			).then(function(){ return fillForm.parseTable(receiverConf.receiverName, pathes.receiverTableXpath);
 			}).then((res)=> { // Set result to the Test Link and fulfill the Promise object
 					resolve(httpClient.setResultToTestLink(res, testId));
