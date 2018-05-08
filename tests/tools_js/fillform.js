@@ -32,12 +32,19 @@ module.exports = {
 			
             for(let p = 0; p < arr[k].length; p++)
 			{
-                arr[k][p].then(function(txt){
+            	
+            	arr[k][p].getText().then((txt)=> {
                 	if(finder === txt)
                 	{
                 		resolve(true);
                 	}
                 });
+//                arr[k][p].then(function(txt){
+//                	if(finder === txt)
+//                	{
+//                		resolve(true);
+//                	}
+//                });
 			}
         }
 		browser.sleep(4000).then(function() {
@@ -87,12 +94,19 @@ module.exports = {
 	        {
 	            for(let p = 0; p < arr[k].length; p++)
 				{
-	                arr[k][p].then(function(txt){
+	            	
+	            	arr[k][p].getText().then((txt)=> {
 	                	if(finder === txt)
 	                	{
 	                		resolve(true);
 	                	}
 	                });
+//	                arr[k][p].then(function(txt){
+//	                	if(finder === txt)
+//	                	{
+//	                		resolve(true);
+//	                	}
+//	                });
 				}
 	        }
 			browser.sleep(4000).then(function() {
