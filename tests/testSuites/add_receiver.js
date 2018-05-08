@@ -20,8 +20,11 @@ describe('WEB UI  tests', function() {
 
   // Add a new receiver to ZEN.
   it('Add receiver', function() {
-	  addReceiverTestDriver.addReceiver(receiverConf).then(function(res){
+	  var testId = '8603';
+	  addReceiverTestDriver.addReceiver(receiverConf, testId).then(function(res){
 		  expect(res).toBeTruthy();
+	  }, function(err){
+		  expect(err).toBeTruthy();
 	  });
   });
   

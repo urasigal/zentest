@@ -12,19 +12,11 @@ module.exports = {
 		// This function has to return a Promise.
 		addBroadcaster: function(clusterConf, testId) {
 			return  new Promise((resolve, reject) => {
+			// Select cluster panel.
 			locations.broadcasterDashboardSelector().click().
-			// Fill a receiver form and save.
-			then(() => { return fillForm.fillNewBroadcasterFormAndSave(clusterConf);
-			// Testing part
-			//////////////////////////////////////////////////////////////////////////////
-			// Check if cluster was added.
-			}).then(() =>  return browser.sleep(5000)
-			).then(() => return locations.broadcasterDashboardSelector().click()
-			).then(()=> { return fillForm.parseBroadcasterTable(clusterConf.clusterName);
-			}).then((res)=> { // Set result to the Test Link and fulfill the Promise object
-				resolve(httpClient.setResultToTestLink(res, testId));
-				}, (res)=> reject(res)
-			);
+			
+			then(() => );
+			
 		});
 	}
 }

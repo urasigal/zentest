@@ -46,22 +46,29 @@ module.exports = {
 	  });
 	});
   },
-  parseBroadcasterTable: function(finder){
+  parseBroadcasterTable: function(finder){ // Finder argument is a text value of of the WEB element.
 		let tableParser = new TableParser();
 		// res is a Promise.
 		let res = tableParser.parseTableAndFillArray(xpathes.clusterTableXpath);
-		 return new Promise(function(resolve, reject) {  res.then(function(arr){
+		 return new Promise((resolve, reject)=> { 
+			res.then((arr)=> {
 			for(let k = 0; k < arr.length; k ++)
 	        {
 				
 	            for(let p = 0; p < arr[k].length; p++)
 				{
-	                arr[k][p].then(function(txt){
+	            	arr[k][p].getText().then((txt) = >{
 	                	if(finder === txt)
 	                	{
 	                		resolve(true);
 	                	}
 	                });
+//	                arr[k][p].then(function(txt){
+//	                	if(finder === txt)
+//	                	{
+//	                		resolve(true);
+//	                	}
+//	                });
 				}
 	        }
 			browser.sleep(4000).then(function() {
