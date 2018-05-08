@@ -18,8 +18,8 @@ module.exports = {
 			// Testing part
 			//////////////////////////////////////////////////////////////////////////////
 			// Check if cluster was added.
-			}).then(() =>  return browser.sleep(5000)
-			).then(() => return locations.broadcasterDashboardSelector().click()
+			}).then(() => browser.sleep(5000)
+			).then(() => locations.broadcasterDashboardSelector().click()
 			).then(()=> { return fillForm.parseBroadcasterTable(clusterConf.clusterName);
 			}).then((res)=> { // Set result to the Test Link and fulfill the Promise object
 				resolve(httpClient.setResultToTestLink(res, testId));
