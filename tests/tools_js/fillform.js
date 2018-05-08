@@ -57,7 +57,7 @@ module.exports = {
 				
 	            for(let p = 0; p < arr[k].length; p++)
 				{
-	            	arr[k][p].getText().then((txt) = >{
+	            	arr[k][p].getText().then((txt)=> {
 	                	if(finder === txt)
 	                	{
 	                		resolve(true);
